@@ -1,0 +1,38 @@
+[
+  {
+    "name": "main branch push",
+    "event": "push",
+    "ref": "refs/heads/main",
+    "expectedPublish": false
+  },
+  {
+    "name": "feature branch push",
+    "event": "push",
+    "ref": "refs/heads/review",
+    "expectedPublish": false
+  },
+  {
+    "name": "pull request",
+    "event": "pull_request",
+    "ref": "refs/pull/1/merge",
+    "expectedPublish": false
+  },
+  {
+    "name": "manual dispatch",
+    "event": "workflow_dispatch",
+    "ref": "refs/heads/main",
+    "expectedPublish": false
+  },
+  {
+    "name": "v-prefixed tag push",
+    "event": "push",
+    "ref": "refs/tags/v1.2.3",
+    "expectedPublish": true
+  },
+  {
+    "name": "non-v tag push",
+    "event": "push",
+    "ref": "refs/tags/test-1",
+    "expectedPublish": false
+  }
+]

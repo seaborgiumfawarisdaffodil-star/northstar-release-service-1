@@ -1,0 +1,23 @@
+{
+  "name": "release-pipeline-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic release-security review; publishing is local only.",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test tests/*.test.mjs",
+    "audit": "node scripts/check-policy.mjs",
+    "publish:preview": "node scripts/publish-preview.mjs",
+    "baseline": "node scripts/verify.mjs baseline",
+    "verify": "node scripts/verify.mjs verification",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "yaml": "2.9.1"
+  }
+}
